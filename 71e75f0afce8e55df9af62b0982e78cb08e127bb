@@ -1,0 +1,5 @@
+- fixed make install KLX.m4 problem
+- made adapter.awk checkout
+- added polish description
+
+Based on spec by SATO Katsuyoshi <fc3srx7@mwnet.or.jp>
