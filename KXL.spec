@@ -78,7 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog
 %attr(755,root,root) %{_libdir}/lib%{name}-%{version}.so
-%attr(755,root,root) %{_libdir}/lib%{name}.la
+%{_libdir}/lib%{name}.la
 
 %files devel
 %defattr(644,root,root,755)
