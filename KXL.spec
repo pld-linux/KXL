@@ -1,18 +1,17 @@
 Summary:	KXL - a visual & sound library
 Summary(pl):	KXL - biblioteka X11 - d¼wiêk i grafika
 Name:		KXL
-Version:	1.1.5
-Release:	3
+Version:	1.1.7
+Release:	1
 License:	GPL
 Group:		X11/Libraries
 Source0:	http://kxl.hn.org/download/%{name}-%{version}.tar.gz
 URL:		http://kxl.hn.org/
+BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
-BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 Kacchan X Windows System Library (KXL) is a visual & sound library.
@@ -76,11 +75,11 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog
 %attr(755,root,root) %{_libdir}/lib%{name}-%{version}.so
-%{_libdir}/lib%{name}.la
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib%{name}.so
+%{_libdir}/lib%{name}.la
 %{_includedir}/*
 %{_aclocaldir}/KXL.m4
 
