@@ -1,8 +1,8 @@
-Summary:	KXL -- a visual & sound library
-Summary(pl):	KXL -- biblioteka X11 - d¼wiêk i grafika
+Summary:	KXL - a visual & sound library
+Summary(pl):	KXL - biblioteka X11 - d¼wiêk i grafika
 Name:		KXL
 Version:	1.1.4
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
@@ -17,6 +17,7 @@ URL:		http://www2.mwnet.or.jp/~fc3srx7/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
+BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -44,7 +45,7 @@ Requires:	%{name} = %{version}
 %description devel
 Development resources for KXL.
 
-%description -l pl devel
+%description devel -l pl
 Pliki nag³ówkowe i dokumentacja do KXL.
 
 %package static
@@ -63,13 +64,15 @@ Requires:	%{name}-devel = %{version}
 %description static
 Static KXL library.
 
-%description -l pl static
+%description static -l pl
 Statyczna biblioteka KXL.
 
 %prep
 %setup -q
 
 %build
+# libKXL uses libX11, so should be linked with it:
+echo 'libKXL_la_LIBADD = -L/usr/X11R6/lib -lX11' >> src/Makefile.am
 rm -f missing
 libtoolize --copy --force
 aclocal
@@ -90,13 +93,8 @@ gzip -9nf ChangeLog
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-ln -s %{_libdir}/lib%{name}-%{version}.so %{_libdir}/lib%{name}.so
-/sbin/ldconfig
-
-%postun 
-rm %{_libdir}/lib%{name}.so
-/sbin/ldconfig
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
@@ -106,6 +104,7 @@ rm %{_libdir}/lib%{name}.so
 
 %files devel
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/lib%{name}.so
 %{_includedir}/*
 %{_aclocaldir}/KXL.m4
 
