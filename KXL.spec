@@ -32,6 +32,10 @@ Kacchan X Windows System Liblary (KXL) to biblioteka dzwiêku i video.
 %prep
 rm -rf $RPM_BUILD_ROOT
 
+%post
+echo Trwa rejestrowanie bibliotek w systemie...
+/sbin/ldconfig
+
 %setup -q
 
 %build
