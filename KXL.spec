@@ -2,7 +2,7 @@ Summary:	KXL - a visual & sound library
 Summary(pl):	KXL - biblioteka X11 - d¼wiêk i grafika
 Name:		KXL
 Version:	1.1.7
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Libraries
 Source0:	http://kxl.hn.org/download/%{name}-%{version}.tar.gz
