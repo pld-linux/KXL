@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		X11/Libraries
 Source0:	http://kxl.hn.org/download/%{name}-%{version}.tar.gz
+# Source0-md5:	321bfad9dee29840656225b54bb6feb0
 URL:		http://kxl.hn.org/
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
