@@ -13,8 +13,6 @@ BuildRequires:	libtool
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 Kacchan X Windows System Library (KXL) is a visual & sound library.
