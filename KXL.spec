@@ -26,7 +26,8 @@ grafiki.
 Summary:	Development resources for KXL
 Summary(pl):	Pliki nag³ówkowe i dokumentacja do KXL
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
+Requires:	XFree86-devel
 
 %description devel
 Development resources for KXL.
@@ -38,7 +39,7 @@ Pliki nag³ówkowe i dokumentacja do KXL.
 Summary:	Static KXL library
 Summary(pl):	Statyczna biblioteka KXL
 Group:		X11/Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static KXL library.
