@@ -68,8 +68,6 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	aclocaldir=%{_aclocaldir}
 
-gzip -9nf ChangeLog
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -78,7 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc ChangeLog
 %attr(755,root,root) %{_libdir}/lib%{name}-%{version}.so
 %attr(755,root,root) %{_libdir}/lib%{name}.la
 
