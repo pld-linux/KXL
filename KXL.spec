@@ -1,5 +1,5 @@
 Summary:	KXL -- a visual & sound library
-Summary(pl):	KXL -- biblioteka X11 - dzwiêk i wideo
+Summary(pl):	KXL -- biblioteka X11 - d¼wiêk i grafika
 Name:		KXL
 Version:	1.1.3
 Release:	1
@@ -24,10 +24,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_mandir		%{_prefix}/man
 
 %description
-Kacchan X Windows System Liblary (KXL) is a visual & sound library.
+Kacchan X Windows System Library (KXL) is a visual & sound library.
 
 %description -l pl
-Kacchan X Windows System Liblary (KXL) to biblioteka dzwiêku i video.
+Kacchan X Windows System Library (KXL) to biblioteka d¼wiêku i grafiki.
 
 %package devel
 Summary:	Development resources for KXL
@@ -40,13 +40,13 @@ Group(pl):	X11/Programowanie/Biblioteki
 Group(pt_BR):	X11/Desenvolvimento/Bibliotecas
 Group(ru):	X11/òÁÚÒÁÂÏÔËÁ/âÉÂÌÉÏÔÅËÉ
 Group(uk):	X11/òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
-Requires:	%{name} >= %{version}
+Requires:	%{name} = %{version}
 
 %description devel
 Development resources for KXL.
 
 %description -l pl devel
-Pliki nag³ówkowe i doumentacja do KXL.
+Pliki nag³ówkowe i dokumentacja do KXL.
 
 %package static
 Summary:	Static KXL library
@@ -59,7 +59,7 @@ Group(pl):	X11/Programowanie/Biblioteki
 Group(pt_BR):	X11/Desenvolvimento/Bibliotecas
 Group(ru):	X11/òÁÚÒÁÂÏÔËÁ/âÉÂÌÉÏÔÅËÉ
 Group(uk):	X11/òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
-Requires:	%{name}-devel >= %{version}
+Requires:	%{name}-devel = %{version}
 
 %description static
 Static KXL library.
@@ -89,11 +89,11 @@ rm -rf $RPM_BUILD_ROOT
 
 gzip -9nf ChangeLog README
 
-%post   -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
-
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post   -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
