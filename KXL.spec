@@ -25,7 +25,7 @@ grafiki.
 
 %package devel
 Summary:	Development resources for KXL
-Summary(pl):	Pliki nag³ówkowe i doumentacja do KXL
+Summary(pl):	Pliki nag³ówkowe i dokumentacja do KXL
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
 
