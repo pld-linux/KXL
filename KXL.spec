@@ -1,8 +1,8 @@
 Summary:	KXL -- a visual & sound library
 Summary(pl):	KXL -- biblioteka X11 - d╪wiЙk i grafika
 Name:		KXL
-Version:	1.1.3
-Release:	2
+Version:	1.1.4
+Release:	1
 License:	GPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
@@ -13,7 +13,6 @@ Group(pt_BR):	X11/Bibliotecas
 Group(ru):	X11/Библиотеки
 Group(uk):	X11/Б╕бл╕отеки
 Source0:	http://www2.mwnet.or.jp/~fc3srx7/download/%{name}-%{version}.tar.gz
-Patch0:		%{name}-lib_version.patch
 URL:		http://www2.mwnet.or.jp/~fc3srx7/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -69,7 +68,6 @@ Statyczna biblioteka KXL.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 rm -f missing
@@ -87,26 +85,30 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	aclocaldir=%{_aclocaldir}
 
-gzip -9nf ChangeLog README
+gzip -9nf ChangeLog
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post   -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+%post
+ln -s %{_libdir}/lib%{name}-%{version}.so %{_libdir}/lib%{name}.so
+/sbin/ldconfig
+
+%postun 
+rm %{_libdir}/lib%{name}.so
+/sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%doc *.gz
+%attr(755,root,root) %{_libdir}/lib%{name}-%{version}.so
+%attr(755,root,root) %{_libdir}/lib%{name}.la
 
 %files devel
 %defattr(644,root,root,755)
-%doc *.gz KXL.html
-%attr(755,root,root) %{_libdir}/lib*.la
-%attr(755,root,root) %{_libdir}/lib*.so
 %{_includedir}/*
 %{_aclocaldir}/KXL.m4
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/lib%{name}.a
