@@ -50,7 +50,7 @@ Statyczna biblioteka KXL.
 
 %build
 # libKXL uses libX11, so should be linked with it:
-echo 'libKXL_la_LIBADD = -L/usr/X11R6/lib -lX11' >> src/Makefile.am
+echo 'libKXL_la_LIBADD = -L/usr/X11R6/%{_lib} -lX11' >> src/Makefile.am
 rm -f missing
 %{__libtoolize}
 %{__aclocal}
