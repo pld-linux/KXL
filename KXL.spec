@@ -15,10 +15,10 @@ BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Kacchan X Windows System Library (KXL) is a visual & sound library.
+Kacchan X Window System Library (KXL) is a visual & sound library.
 
 %description -l pl
-Kacchan X Windows System Library (KXL) to biblioteka d¼wiêku i
+Kacchan X Window System Library (KXL) to biblioteka d¼wiêku i
 grafiki.
 
 %package devel
