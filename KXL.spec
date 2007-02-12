@@ -1,5 +1,5 @@
 Summary:	KXL - a visual & sound library
-Summary(pl):	KXL - biblioteka X11 - d¼wiêk i grafika
+Summary(pl.UTF-8):   KXL - biblioteka X11 - dÅºwiÄ™k i grafika
 Name:		KXL
 Version:	1.1.7
 Release:	3
@@ -18,13 +18,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Kacchan X Window System Library (KXL) is a visual & sound library.
 
-%description -l pl
-Kacchan X Window System Library (KXL) to biblioteka d¼wiêku i
+%description -l pl.UTF-8
+Kacchan X Window System Library (KXL) to biblioteka dÅºwiÄ™ku i
 grafiki.
 
 %package devel
 Summary:	Development resources for KXL
-Summary(pl):	Pliki nag³ówkowe i dokumentacja do KXL
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe i dokumentacja do KXL
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	XFree86-devel
@@ -32,19 +32,19 @@ Requires:	XFree86-devel
 %description devel
 Development resources for KXL.
 
-%description devel -l pl
-Pliki nag³ówkowe i dokumentacja do KXL.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe i dokumentacja do KXL.
 
 %package static
 Summary:	Static KXL library
-Summary(pl):	Statyczna biblioteka KXL
+Summary(pl.UTF-8):   Statyczna biblioteka KXL
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static KXL library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka KXL.
 
 %prep
