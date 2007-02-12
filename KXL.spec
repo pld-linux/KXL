@@ -1,5 +1,5 @@
 Summary:	KXL - a visual & sound library
-Summary(pl.UTF-8):   KXL - biblioteka X11 - dźwięk i grafika
+Summary(pl.UTF-8):	KXL - biblioteka X11 - dźwięk i grafika
 Name:		KXL
 Version:	1.1.7
 Release:	3
@@ -24,7 +24,7 @@ grafiki.
 
 %package devel
 Summary:	Development resources for KXL
-Summary(pl.UTF-8):   Pliki nagłówkowe i dokumentacja do KXL
+Summary(pl.UTF-8):	Pliki nagłówkowe i dokumentacja do KXL
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	XFree86-devel
@@ -37,7 +37,7 @@ Pliki nagłówkowe i dokumentacja do KXL.
 
 %package static
 Summary:	Static KXL library
-Summary(pl.UTF-8):   Statyczna biblioteka KXL
+Summary(pl.UTF-8):	Statyczna biblioteka KXL
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
