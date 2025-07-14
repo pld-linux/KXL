@@ -49,7 +49,7 @@ Statyczna biblioteka KXL.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 # libKXL uses libX11, so should be linked with it:
